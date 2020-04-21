@@ -11,10 +11,10 @@ let on = false;
 let win;
 
 const turnCounter = document.querySelector("#turn");
-const topLeft = document.querySelector("#topLeft");
-const topRight = document.querySelector("#topRight");
-const bottomLeft = document.querySelector("#bottomLeft");
-const bottomRight = document.querySelector("#bottomRight");
+const topLeft = document.querySelector("#topleft");
+const topRight = document.querySelector("#topright");
+const bottomLeft = document.querySelector("#bottomleft");
+const bottomRight = document.querySelector("#bottomright");
 const strictButton = document.querySelector("#strict");
 const onButton = document.querySelector("#on");
 const startButton = document.querySelector("#start");
@@ -122,3 +122,55 @@ function clearColor() {
   bottomLeft.style.backgroundColor = "goldenrod";
   bottomRight.style.backgroundColor = "darkblue";
 }
+
+topLeft.addEventListener('click', (event) => {
+  if (on) {
+    playerOrder.push(1);
+    //check();
+    one();
+    if (!win) {
+      setTimeout(() => {
+        clearColor();
+      }, 300);
+    }
+  }
+})
+
+topRight.addEventListener('click', (event) => {
+  if (on) {
+    playerOrder.push(2);
+    //check();
+    two();
+    if (!win) {
+      setTimeout(() => {
+        clearColor();
+      }, 300);
+    }
+  }
+})
+
+bottomLeft.addEventListener('click', (event) => {
+  if (on) {
+    playerOrder.push(3);
+    //check();
+    three();
+    if (!win) {
+      setTimeout(() => {
+        clearColor();
+      }, 300);
+    }
+  }
+})
+
+bottomRight.addEventListener('click', (event) => {
+  if (on) {
+    playerOrder.push(4);
+    //check();
+    four();
+    if (!win) {
+      setTimeout(() => {
+        clearColor();
+      }, 300);
+    }
+  }
+})
